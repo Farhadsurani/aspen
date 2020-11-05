@@ -14,3 +14,513 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+// $app-background-image : url('https://aspenweather.net/wp-content/uploads/2017/10/winter2.jpg') no-repeat;
+$app-background-image : url('../assets/icons/summer.png') no-repeat;
+$min_backdrop : url('../assets/icons/loginbg.png') no-repeat;
+$input_border_color : 1px solid #a7a9ac;
+$input_text_color : #a7a9ac !important;
+$normalfontcolor : #ffffff !important;
+$membershippricefontcolor : #000000 !important;
+$button-md-text-transform : initial;
+$toolbar-ios-height: 60px;
+
+
+@font-face {
+    font-family: Helvetica;
+    src: url(../../assets/Fonts/Helvetica.dfont) format('dfont');
+    font-weight: normal;
+         font-style:normal;
+}
+@font-face {
+    font-family: AvenirNext;
+    src: url(../../assets/Fonts/AvenirNext.ttc) format('AvenirNext');
+    font-weight: normal;
+         font-style:normal;
+}
+@font-face {
+    font-family: futura;
+    src: url(./assets/Fonts/Futura.ttc) format('ttc');
+    font-weight: normal;
+         font-style:normal;
+}
+@font-face {
+    font-family: MyriadPro-Bold;
+    src: url(../../assets/Fonts/MyriadPro-Bold.otf) format('otf');
+    font-weight: normal;
+         font-style:normal;
+}
+
+body{
+  font-family: futura !important;
+}
+
+
+.content_box {
+    background : $app-background-image;
+   background-size: 100% 100%;
+   color : $normalfontcolor;
+   border-radius: 5px;
+}
+p{
+      font-size: 1.4rem;
+}
+h1 {
+    font-size: 4.0rem;
+}
+h1,h2,h3,h4,h5,h6{
+ font-family: Helvetica;
+     font-weight: 700;
+}
+
+.toolbar-ios,.toolbar-md,.toolbar-wp{
+min-height : $toolbar-ios-height;
+}
+.toolbar-background{
+         border: none !important
+}
+.text-input {
+  color  : $input_text_color;
+  padding-left  :16px;
+}
+
+ion-footer {height: 80px;
+    bottom: -18;}
+.login_bg{
+
+   background : $min_backdrop;
+   background-size: 100% 100%;
+   border-radius: 30px;
+
+}
+
+// .swiper-slide img {
+//     height: auto;
+//     position: absolute;
+//     bottom: 0;
+// }
+form .list .item-input:last-child{
+        border-bottom: none;
+    }
+    form .list .item:last-child .item-inner{
+            border-bottom: $input_border_color;
+        }
+ form .list{
+.item {
+    background-color: transparent;
+    padding: 0px;
+    height: 3.6rem;
+
+    .item-inner{
+
+          border: $input_border_color;
+
+    }
+
+}
+}
+
+
+.button-md{
+
+        text-transform: $button-md-text-transform;
+}
+
+
+
+ion-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.box_background{
+
+      max-width: 600px;
+      text-align: center;
+      margin: auto;
+      margin-top: -15px !important;
+      height: 505px;
+
+}
+.slide-zoom {
+    // margin-bottom: 20px;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+
+/*
+div.slides_join div:first-child{
+border-top: 0.5px solid rgba(255, 255, 255, 0.18);
+}
+
+div.slides_join div:last-child{
+border-top: 0.5px solid rgba(255, 255, 255, 0.18);
+border-bottom: 0.5px solid rgba(255, 255, 255, 0.18);
+} */
+
+.slides_join_line{
+    height: 1px !important;
+         background-color: rgba(255, 255, 255, 0.18) !important;
+      margin: 0px 50px;
+      height: 100%;
+}
+.p_txt{
+
+  font-size: 1.4rem;
+      font-style: normal;
+      font-weight: 300;
+          color: $normalfontcolor;
+}
+.vsmall_txt{
+
+  font-size: 0.8rem !important;
+      font-style: normal;
+          color: $membershippricefontcolor;
+}
+.small_txt{
+font-size: 1.4rem;
+}.medium_txt{
+font-size: 1.8rem;
+}.large_txt{
+font-size: 2.4rem;
+}
+.content_details .small_txt{
+    font-size: 1.2rem;
+    min-height: 30px
+    }
+.joinnow_headerbtn{
+      position: absolute;
+          top: 20px;
+          left: 0px;
+          right: 0px;
+          margin: auto;
+          text-align: center;
+          width: 120px;
+          margin-bottom: 10px;
+}
+.asp_header_logo{
+    padding: 4px;
+text-align: center;
+    height: 50px;
+    width: auto;
+
+}
+
+ion-input {
+    &.custom-input {
+      font-size: 14px; //sets text font size
+      ::placeholder {
+        font-size: 12px; //sets placeholder font size
+      }
+    }
+  }
+
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 0px !important;
+}
+.swipe_hint{
+  color : #fdd713;
+}
+.swiper-pagination-bullet{
+    background : #fdd713;
+}
+.swiper-pagination-bullet-active{
+    background : #fdd713;
+}
+body {
+    padding-top: constant(safe-area-inset-top); /* iOS 11.0 */
+    padding-top: env(safe-area-inset-top); /* iOS 11.2 */
+   }
+
+   .yourFooterClass {
+    margin-bottom: constant(safe-area-inset-bottom); /* iOS 11.0 */
+    margin-bottom: env(safe-area-inset-bottom); /* iOS 11.2 */
+   }
+.medium_img{
+    width: auto !important;
+    max-height: 30px !important;
+    height: auto;
+}
+.weathernormal_img{
+  width : 60px !important;
+  height : auto;
+}
+.weathehighlight_img{
+  width : 80px !important;
+  height : auto;
+}
+.hourly_img{
+  width : 40px !important;
+  height : auto;
+}
+.vertical_align{
+  align-items: center!important;
+      display: flex;
+}
+
+.icons{
+    height: 23px;
+  width : auto;
+      margin: 5px;
+}
+.weather_head{
+          max-width: 200px;
+          margin: auto !important;
+}
+.hourlygrid_line{
+     height: 1px !important;
+              background-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 20px !important;
+}
+.swipe_pagination_hint{
+  position: absolute;
+      text-align: center;
+      left: 0px;
+      margin: auto;
+      right: 0px;
+      bottom: 0px;
+}
+.swiper-pagination {
+    text-align: center;
+    position: absolute;
+    transition: 300ms;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    z-index: 10;
+    pointer-events: none;
+    right: 0;
+    left: 0;
+}
+.modal-wrapper ion-content {
+    background-color: #000 !important;
+}
+
+.footer .toolbar-background {
+    background-color : transparent !important;
+    padding-bottom: 0px;
+    height:90px;
+  
+}
+.footer .toolbar-title {
+    color:transparent !important;
+}
+.asp_logo{
+    height: 65px;
+    width: auto;
+    margin: 30px 0 15px;
+}
+
+#login_form ion-avatar{
+  margin: -5px !important;
+}
+
+.avatar_input{
+      width: 32px !important;
+      height: auto;
+      padding: 5px !important;
+}
+
+ion-scroll {
+  white-space: nowrap;
+  
+  height: 300px
+}
+
+img{
+  margin: 10px;
+}
+
+ion-card{
+  width: 30vw;
+  display: inline-block;
+}
+
+
+
+.ios.cordova:not(.fullscreen) .bar-header:not(.bar-subheader) {
+  height: calc(44px + constant(safe-area-inset-top));
+}
+
+
+.ios.cordova:not(.fullscreen) .bar-header:not(.bar-subheader) > * {
+  margin-top: constant(safe-area-inset-top);
+}
+
+div.tab-nav.tabs {
+  height: calc(49px + constant(safe-area-inset-bottom));
+}
+
+ion-content.padding.scroll-content.ionic-scroll.has-header.has-tabs {
+  top: calc(64px + constant(safe-area-inset-top));
+}
+
+/* general css */
+.margintb_5{
+              margin: 5px 0px !important;
+      }.margintb_10{
+              margin: 10px 0px !important;
+      }
+      .margintb_20{
+          margin : 20px 0px !important;
+      }
+      .marg0{
+          margin : 0px !important;
+      }.marg5{
+          margin : 5px !important;
+      }.padding0{
+          padding : 0px !important;
+      }.padding10{
+        padding: 10px !important;
+      }
+      .padding9{
+        padding: 9px !important;
+      }
+      .padding10td{
+        padding: 0 !important;
+        max-width:20px
+      }
+      .paddingtb20{
+          padding: 20px 0px;
+      }.paddingtop0{
+          padding-top : 0px !important;
+      }
+      .paddinglr10{
+          padding-left : 10px !important;
+          padding-right : 10px !important;
+      }
+      .margint_0{
+                margin-top: 0px !important;
+
+      }.marginb_0{
+                margin-top: 0px !important;
+
+      }
+      .margint_10{
+                 margin-top: 10px !important;
+
+      }
+      .margint_20{
+                 margin-top: 20px !important;
+
+      }.margint_30{
+             margin-top: 30px;
+      }.mar2{
+           margin-top: 2px !important;
+      }.mar-20pr{
+          margin-top: -20% !important;
+      }.paddingtb_10{
+          padding : 10px 0px;
+      }
+      .rel{
+          position: relative;
+      }
+      .float_r{
+        float: right;
+      }
+
+      .bordernone{
+          border: none !important;
+      }
+      .brnone{
+          border-radius: 0px;
+      }
+
+      .splash {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ff7400;
+    }
+    
+
+
+      // workaround for https://github.com/ionic-team/ionic/issues/13294
+// probably breaks iPhone X support
+.ios ion-nav > .ion-page > .toolbar.statusbar-padding:first-child,
+.ios ion-nav > .ion-page > ion-header > .toolbar.statusbar-padding:first-child,
+.ios ion-tab > .ion-page > .toolbar.statusbar-padding:first-child,
+.ios ion-tab > .ion-page > ion-header > .toolbar.statusbar-padding:first-child,
+.ios ion-tabs > .ion-page.tab-subpage > ion-header > .toolbar.statusbar-padding:first-child,
+.ios ion-menu > .menu-inner > .toolbar.statusbar-padding:first-child,
+.ios ion-menu > .menu-inner > ion-header > .toolbar.statusbar-padding:first-child {
+  padding-top: calc(20px + 4px) !important;
+  min-height: calc(44px + 20px) !important;
+}
+
+.ios ion-nav > .ion-page > ion-content.statusbar-padding:first-child .scroll-content,
+.ios ion-nav > .ion-page > ion-header > ion-content.statusbar-padding:first-child .scroll-content,
+.ios ion-tab > .ion-page > ion-content.statusbar-padding:first-child .scroll-content,
+.ios ion-tab > .ion-page > ion-header > ion-content.statusbar-padding:first-child .scroll-content,
+.ios ion-tabs > .ion-page.tab-subpage > ion-header > ion-content.statusbar-padding:first-child .scroll-content,
+.ios ion-menu > .menu-inner > ion-content.statusbar-padding:first-child .scroll-content,
+.ios ion-menu > .menu-inner > ion-header > ion-content.statusbar-padding:first-child .scroll-content {
+  padding-top: 20px !important;
+}
+
+.ios ion-nav > .ion-page > ion-content.statusbar-padding:first-child[padding] .scroll-content,
+.ios ion-nav > .ion-page > ion-content.statusbar-padding:first-child[padding-top] .scroll-content,
+.ios ion-nav > .ion-page > ion-header > ion-content.statusbar-padding:first-child[padding] .scroll-content,
+.ios ion-nav > .ion-page > ion-header > ion-content.statusbar-padding:first-child[padding-top] .scroll-content,
+.ios ion-tab > .ion-page > ion-content.statusbar-padding:first-child[padding] .scroll-content,
+.ios ion-tab > .ion-page > ion-content.statusbar-padding:first-child[padding-top] .scroll-content,
+.ios ion-tab > .ion-page > ion-header > ion-content.statusbar-padding:first-child[padding] .scroll-content,
+.ios ion-tab > .ion-page > ion-header > ion-content.statusbar-padding:first-child[padding-top] .scroll-content,
+.ios ion-tabs > .ion-page.tab-subpage > ion-header > ion-content.statusbar-padding:first-child[padding] .scroll-content,
+.ios ion-tabs > .ion-page.tab-subpage > ion-header > ion-content.statusbar-padding:first-child[padding-top] .scroll-content,
+.ios ion-menu > .menu-inner > ion-content.statusbar-padding:first-child[padding] .scroll-content,
+.ios ion-menu > .menu-inner > ion-content.statusbar-padding:first-child[padding-top] .scroll-content,
+.ios ion-menu > .menu-inner > ion-header > ion-content.statusbar-padding:first-child[padding] .scroll-content,
+.ios ion-menu > .menu-inner > ion-header > ion-content.statusbar-padding:first-child[padding-top] .scroll-content {
+  padding-top: calc(16px + 20px) !important;
+}
+
+.ios ion-nav > .ion-page > .toolbar.statusbar-padding:first-child ion-segment,
+.ios ion-nav > .ion-page > .toolbar.statusbar-padding:first-child ion-title,
+.ios ion-nav > .ion-page > ion-header > .toolbar.statusbar-padding:first-child ion-segment,
+.ios ion-nav > .ion-page > ion-header > .toolbar.statusbar-padding:first-child ion-title,
+.ios ion-tab > .ion-page > .toolbar.statusbar-padding:first-child ion-segment,
+.ios ion-tab > .ion-page > .toolbar.statusbar-padding:first-child ion-title,
+.ios ion-tab > .ion-page > ion-header > .toolbar.statusbar-padding:first-child ion-segment,
+.ios ion-tab > .ion-page > ion-header > .toolbar.statusbar-padding:first-child ion-title,
+.ios ion-tabs > .ion-page.tab-subpage > ion-header > .toolbar.statusbar-padding:first-child ion-segment,
+.ios ion-tabs > .ion-page.tab-subpage > ion-header > .toolbar.statusbar-padding:first-child ion-title,
+.ios ion-menu > .menu-inner > .toolbar.statusbar-padding:first-child ion-segment,
+.ios ion-menu > .menu-inner > .toolbar.statusbar-padding:first-child ion-title,
+.ios ion-menu > .menu-inner > ion-header > .toolbar.statusbar-padding:first-child ion-segment,
+.ios ion-menu > .menu-inner > ion-header > .toolbar.statusbar-padding:first-child ion-title {
+  padding-top: 20px !important;
+  height: calc(44px + 20px) !important;
+  min-height: calc(44px + 20px) !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .ios .modal-wrapper > .ion-page > ion-header > .toolbar.statusbar-padding:first-child {
+    padding-top: calc(20px + 4px) !important;
+    min-height: calc(44px + 20px) !important;
+  }
+  .ios .modal-wrapper > .ion-page > ion-header > ion-content.statusbar-padding:first-child .scroll-content {
+    padding-top: 20px !important;
+  }
+  .ios .modal-wrapper > .ion-page > ion-header > ion-content.statusbar-padding:first-child[padding] .scroll-content,
+  .ios .modal-wrapper > .ion-page > ion-header > ion-content.statusbar-padding:first-child[padding-top] .scroll-content {
+    padding-top: calc(16px + 20px) !important;
+  }
+  .ios .modal-wrapper > .ion-page > ion-header > .toolbar.statusbar-padding:first-child ion-segment,
+  .ios .modal-wrapper > .ion-page > ion-header > .toolbar.statusbar-padding:first-child ion-title {
+    padding-top: 20px !important;
+    height: calc(44px + 20px) !important;
+    min-height: calc(44px + 20px) !important;
+  }
+}
