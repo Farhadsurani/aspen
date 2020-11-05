@@ -1,0 +1,40 @@
+<ion-header>
+    <header-component [headerpush]="header"></header-component>
+  </ion-header>
+  
+<ion-content has-header padding class="content_box ">
+<div padding-bottom class="login_bg box_background">
+
+<div margin padding>
+ 
+  <h5 class="marg5" text-center>About US</h5>
+  <span [innerHTML]="apiData?.page?.content"></span>
+</div>
+
+
+</div>
+
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar>
+        <ion-slides autoplay="500" loop="true" speed="3000">
+        <ion-slide>
+        <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.snowmassrecreation.com" target="_blank"><img style="padding: 10px;margin:0;" src= {{ads_data[0]?.image}}></a>
+      </ion-slide>
+        <ion-slide>
+        <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.aspengloballuxury.com" target="_blank"><img style="padding: 10px;margin:0;" src= {{ads_data[1]?.image}}></a>
+        </ion-slide>
+        <ion-slide>
+        <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://sednafilms.com" target="_blank"><img style="padding: 10px;margin:0;" src= {{ads_data[2]?.image}}></a>
+        </ion-slide>
+        <!--<ion-slide>
+        <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.snowmassrecreation.com" target="_blank"><img style=" padding-right: 13px;" src= {{ads_data[3]?.image}}></a>
+        </ion-slide>
+        <ion-slide>
+        <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.dalypropserv.com" target="_blank"><img style=" padding-right: 13px;" src= {{ads_data[4]?.image}}></a>
+        </ion-slide>-->
+        </ion-slides>
+        
+       </ion-toolbar>
+    <!-- <footer-component></footer-component> -->
+  </ion-footer>

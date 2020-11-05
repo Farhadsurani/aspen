@@ -1,0 +1,46 @@
+<!--
+  Generated template for the TermPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <header-component [headerpush]="header"></header-component>
+</ion-header>
+
+
+<ion-content has-header padding class="content_box">
+  <div  class="login_bg box_background rel">
+    <div margin padding>
+        <button ion-button small color="secondary" class="joinnow_headerbtn" (click)="goback();" >go back >>
+          </button>
+    </div>
+    <div style="padding: 5px;height:430px;font:16px/26px Georgia, Garamond, Serif;overflow:auto;margin-left: 5px;">
+      <div class="dssc_font" [innerHTML]=content></div>
+      </div>
+</div>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+      <ion-slides autoplay="500" loop="true" speed="3000">
+      <ion-slide>
+      <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.snowmassrecreation.com" target="_blank"><img style="padding: 10px;margin:0;" src= {{ads_data[0]?.image}}></a>
+    </ion-slide>
+      <ion-slide>
+      <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.aspengloballuxury.com" target="_blank"><img style="padding: 10px;margin:0;" src= {{ads_data[1]?.image}}></a>
+      </ion-slide>
+      <ion-slide>
+      <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://sednafilms.com" target="_blank"><img style="padding: 10px;margin:0;" src= {{ads_data[2]?.image}}></a>
+      </ion-slide>
+      <!--<ion-slide>
+      <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.snowmassrecreation.com" target="_blank"><img style=" padding-right: 13px;" src= {{ads_data[3]?.image}}></a>
+      </ion-slide>
+      <ion-slide>
+      <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.dalypropserv.com" target="_blank"><img style=" padding-right: 13px;" src= {{ads_data[4]?.image}}></a>
+      </ion-slide>-->
+      </ion-slides>
+      
+     </ion-toolbar>
+  <!-- <footer-component></footer-component> -->
+</ion-footer>

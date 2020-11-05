@@ -1,0 +1,89 @@
+<!--
+  Generated template for the NavigationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar color="headercolor">
+    <ion-buttons right>
+      <button ion-button (click)="dismiss();">
+       <!-- <ion-icon color="light" name="close" class="close_nav"></ion-icon>-->
+        <img  src="./assets/icons/menuonpage/exit.png" class="close_nav"/>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content has-header padding class="">
+  <div padding class="box_background">
+    <p text-left>What the delay status means:</p>
+    <ion-list >
+      <ion-item >
+        <span class="primary">LOW</span><span text-wrap> - This means we experience little or no delays at the Aspen
+        airport due to weather. If delays did pop up, they would be short-lived.</span>
+      </ion-item>
+      <ion-item>
+        <span class="sec">MEDIUM</span><span text-wrap> - This means cloud ceilings, visibility, or wind problems at the airport might be an issue for a portion of the day.
+        Delays/cancellation are possible but won't last all day and night</span>
+      </ion-item>
+      <ion-item>
+        <span class="dan">HIGH</span><span text-wrap> - This means either cloud ceilings/visibilities/wind are going to be beow airport minimums for a significant peroid of time.
+          Delays and cancellations are a good possibility.
+        </span>
+        </ion-item>
+
+    </ion-list>
+  </div>
+</ion-content>
+
+
+
+<!--<div class="box_background">
+    <p text-left>What the delay status means:</p>
+    <ion-list>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-2 text-right>
+              <span >LOW</span>
+            </ion-col>
+            <ion-col>
+            <span margin-left text-wrap> - This means we experience little or no delays at the Aspen
+              airport due to weather. If delays did pop up, they would be short-lived.</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-2>
+              <span>MEDIUM</span>
+            </ion-col>
+            <ion-col>
+             <span margin-left text-wrap> - This means cloud ceilings, visibility, or wind problems at the airport might be an issue for a portion of the day.
+        Delays/cancellation are possible but won't last all day and night</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </ion-item>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-2>
+              <span>HIGH</span>
+            </ion-col>
+            <ion-col>
+             <span margin-left text-wrap> - This means either cloud ceilings/visibilities/wind are going to be beow airport minimums for a significant peroid of time.
+          Delays and cancellations are a good possibility.
+        </span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </ion-item>
+
+    </ion-list>
+  </div>-->

@@ -1,0 +1,197 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <header-component [headerpush]="header"></header-component>
+</ion-header>
+
+<ion-content has-header padding class="content_box" >
+    <div class="login_bg box_background box_list">
+      <div padding *ngIf="!isArrayEmpty(apiData)" style="height: 485px;overflow-y: scroll;padding-top:10px">
+        <!--<img src="./assets/icons/membership.png" class="medium_img"/>
+        <h4 text-center class="marg0" margin-bottom>MEMBERSHIP OPTIONS</h4>-->
+        <ion-list margin-left margin-right margin-top>
+          <ion-item >
+
+            <ion-grid class="padding0">
+              <ion-row>
+                <ion-col text-center col-12 class="vertical_align"><h2 class="specialhead">BASIC PACKAGE</h2></ion-col>
+                
+              </ion-row>
+            </ion-grid>
+
+          </ion-item>
+          <ion-item>
+
+            <div padding-top class="feature_data" [innerHTML]="apiData?.custom_fields?.basic_content">
+              
+              <!--<p class="p_txt margintb_10" >10 days access</p>
+              <p class="p_txt margintb_10">Mobile app</p>
+              <p class="p_txt margintb_10">5 hour forecast</p>
+              <p class="p_txt margintb_10">Powder alerts</p>-->
+              
+            </div>
+            <div  style="white-space: initial;width: 250px;margin-left:20px;">
+                <p style="color:white;font-size:10px">•  Payment will be charged to iTunes Account at confirmation of purchase
+                 </p><br>
+                 <p style="color:white;font-size:10px">•  Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period</p><br>
+                 <p style="color:white;font-size:10px">•  Account will be charged for renewal within 24-hours prior to the end of the current period, and identify the cost of the renewal</p><br>
+                 <p style="color:white;font-size:10px">•  Subscriptions can be managed within your iTunes user account settings  after purchase </p>
+              </div>
+            <div>
+              <ion-row>
+                <ion-col text-center col-12 class="membership_price">
+                   <!--[innerHTML]="apiData?.custom_fields?.basic_price"-->
+                    <h2>$24.99 / year </h2>
+                    <!--<p  class="vsmall_txt" >then($7/yr)</p>-->
+                    
+                  </ion-col>
+                </ion-row>
+                
+              <button ion-button text-center block small color="primary"
+                      class="brnone maxwidth_button" (click)="buy(products[0].productId);"> UPGRADE NOW ></button>
+                      
+                      <button ion-button text-center block small color="primary"
+                      class="brnone terms" [navPush]="privacypolicypage"> Privacy policy </button>
+                      <button ion-button text-center block small color="primary"
+                      class="brnone terms" [navPush]="termpage"> Terms </button>
+            </div>
+
+          </ion-item>
+        </ion-list>
+        <ion-list class="highlighed_list" margin-left margin-right margin-top>
+          <ion-item>
+
+            <ion-grid class="padding0"> 
+              <ion-row>
+                <ion-col text-center col-12 class="vertical_align"><h2 class="specialhead">PREMIUM</h2></ion-col>
+                <!--<ion-col text-center  col-2 class="membership_price">
+                  <h2>6$</h2>
+                  <p class="vsmall_txt" >6 months</p>
+                </ion-col>
+                <ion-col text-center  col-1 class="membership_price">
+                  <p class="vsmall_txt" >Or</p>
+                </ion-col>
+                <ion-col col-2 class="membership_price">
+                  <h2  text-center>$85</h2>
+                  <p class="vsmall_txt" >12 months</p>
+                </ion-col>--> 
+              </ion-row>
+            </ion-grid>
+
+          </ion-item>
+          <ion-item text-center>
+
+            <div padding-top class="feature_data" [innerHTML]="apiData?.custom_fields?.premium_content">
+              <!--<p class="p_txt margintb_10" >12 hour weather</p>
+              <p class="p_txt margintb_10" >Forecast discussion</p>
+              <p class="p_txt margintb_10" >10 days access</p>
+              <p class="p_txt margintb_10">Mobile app</p>
+              <p class="p_txt margintb_10">5 hour forecast</p>
+              <p class="p_txt margintb_10">Powder alerts</p>-->
+
+            </div>
+            <div  style="white-space: initial;width: 250px;margin-left:20px;">
+                <p style="color:white;font-size:10px">•  Payment will be charged to iTunes Account at confirmation of purchase
+                 </p><br>
+                 <p style="color:white;font-size:10px">•  Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period</p><br>
+                 <p style="color:white;font-size:10px">•  Account will be charged for renewal within 24-hours prior to the end of the current period, and identify the cost of the renewal</p><br>
+                 <p style="color:white;font-size:10px">•  Subscriptions can be managed within your iTunes user account settings  after purchase </p>
+              </div>
+            <div>
+                <ion-row>
+                    <ion-col text-center  col-12 class="membership_price">
+                      <!--[innerHTML]="apiData?.custom_fields?.premium_price"-->
+                        <h2>$79.99/Year</h2>
+                        <!--<p class="vsmall_txt" >One Time</p>-->
+                      </ion-col>
+                    </ion-row>
+                    
+              <button ion-button text-center block small color="primary"
+              class="brnone maxwidth_button" (click)="buy(products[1].productId);"> UPGRADE Now ></button>
+              <button ion-button text-center block small color="primary"
+                      class="brnone terms" [navPush]="privacypolicypage"> Privacy policy </button>
+                      <button ion-button text-center block small color="primary"
+                      class="brnone terms" [navPush]="termspage"> Terms </button>
+            </div>
+
+          </ion-item>
+        </ion-list>
+        <ion-list margin-left margin-right>
+          <ion-item >
+
+            <ion-grid class="padding0">
+              <ion-row>
+                <ion-col text-center col-12 class="vertical_align"><h2 class="specialhead">VACTIONERS</h2></ion-col>
+                
+              </ion-row>
+            </ion-grid>
+
+          </ion-item>
+          <ion-item text-center>
+            <div padding-top class="feature_data" [innerHTML]="apiData?.custom_fields?.vacationers_content">
+              <!--<p class="p_txt margintb_10" >10 days access</p>
+              <p class="p_txt margintb_10">Mobile app</p>
+              <p class="p_txt margintb_10">5 hour forecast</p>
+              <p class="p_txt margintb_10">Powder alerts</p>-->
+
+            </div>
+            <div  style="white-space: initial;width: 250px;margin-left:20px;">
+                <p style="color:white;font-size:10px">•  Payment will be charged to iTunes Account at confirmation of purchase
+                 </p><br>
+                 <p style="color:white;font-size:10px">•  Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period</p><br>
+                 <p style="color:white;font-size:10px">•  Account will be charged for renewal within 24-hours prior to the end of the current period, and identify the cost of the renewal</p><br>
+                 <p style="color:white;font-size:10px">•  Subscriptions can be managed within your iTunes user account settings  after purchase </p>
+              </div>
+            <div>
+                <ion-row>
+                    <ion-col text-center  col-12 class="membership_price">
+                      <!--[innerHTML]="apiData?.custom_fields?.vacationers_price"-->
+                        <h2>$9.99 / Week</h2>
+                        <!--<p class="vsmall_txt" >One Time</p>-->
+                      </ion-col>
+                    </ion-row>
+                    
+              <button ion-button text-center block small color="primary"
+              class="brnone maxwidth_button" (click)="buy(products[2].productId);"> UPGRADE Now ></button>
+              <button ion-button text-center block small color="primary"
+                      class="brnone terms" [navPush]="privacypolicypage"> Privacy policy </button>
+                      <button ion-button text-center block small color="primary"
+                      class="brnone terms" [navPush]="termpage"> Terms </button>
+
+            <!-- <button ion-button block color="third" [navPush]="weatherpage">continue for free</button>-->
+            </div>
+
+          </ion-item>
+        </ion-list>
+
+      </div>
+    </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+      <ion-slides autoplay="500" loop="true" speed="3000">
+      <ion-slide>
+      <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.snowmassrecreation.com" target="_blank"><img style="padding: 10px;margin:0;" src= {{ads_data[0]?.image}}></a>
+    </ion-slide>
+      <ion-slide>
+      <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.aspengloballuxury.com" target="_blank"><img style="padding: 10px;margin:0;" src= {{ads_data[1]?.image}}></a>
+      </ion-slide>
+      <ion-slide>
+      <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://sednafilms.com" target="_blank"><img style="padding: 10px;margin:0;" src= {{ads_data[2]?.image}}></a>
+      </ion-slide>
+      <!--<ion-slide>
+      <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.snowmassrecreation.com" target="_blank"><img style=" padding-right: 13px;" src= {{ads_data[3]?.image}}></a>
+      </ion-slide>
+      <ion-slide>
+      <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.dalypropserv.com" target="_blank"><img style=" padding-right: 13px;" src= {{ads_data[4]?.image}}></a>
+      </ion-slide>-->
+      </ion-slides>
+      
+     </ion-toolbar>
+  <!-- <footer-component></footer-component> -->
+</ion-footer>

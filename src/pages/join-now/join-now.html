@@ -1,0 +1,128 @@
+
+<!--  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <header-component [headerpush]="header"></header-component>
+</ion-header>
+
+<ion-content has-header padding class="content_box">
+ <!-- <div text-center class="login-margintop">
+    <img src="./assets/icons/logo.png" class="asp_logo" style="margin-top:0;" />
+  </div>-->
+
+  <div margin-top class="login_bg box_background rel">
+ <!--[navPush]="createaccountpage"-->
+    <button ion-button small color="secondary" class="joinnow_headerbtn" [navPush]="membershipOptionsPage" >JOIN NOW >>
+    </button>
+
+      <div padding-top>
+        <p class="large_txt head_color marg0 margint_11" margin-top text-center>{{apiData?.custom_fields?.features_0_features_title}}</p>
+      </div>
+      <div style="height:430px;">
+      <ion-slides pager="true">
+
+        <ion-slide>
+          <div class="slides_join margint_30">
+            <hr class="slides_join_line"/>
+          <div margin-left margin-right padding [innerHTML]="apiData?.custom_fields?.features_0_left_content" class="lfont">
+              <!--<h5 text-center>OUTDOOR PLANNING</h5>
+              <p>Keep aead of the storm and plan your adventures with the most accurate forecast in th Roaring Fork Valley. Weather forecasting tailored to your outdoor needs</p>-->
+          </div>
+            <hr class="slides_join_line"/>
+          <div margin-left margin-right padding [innerHTML]="apiData?.custom_fields?.features_0_middle_content" class="lfont">
+              <br>
+              <!--<h5 text-center>WHO'S IT FOR?</h5>
+              <p>Vacationers Second Home Owners Pilots Flying Into Aspen Outdoor Enthusiasts</p>-->
+          </div>
+            <hr/>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div margin class="slides_join">
+            <div margin-left margin-right padding>
+              <img src="./assets/icons/bubble.png" class="medium_img"/>
+              <h5 class="marg0" text-center>FORECAST DISCUSSION</h5>
+              <p >In depth weather discussions, straight from the experts, to help you plan for your outdoor missions</p>
+            </div>
+            <hr class="slides_join_line"/>
+            <div margin-left margin-right padding>
+              <img src="./assets/icons/changeforecst.png" class="medium_img"/>
+              <h5 class="marg0" margin-top text-center>6 DAY SNOW FORECAST</h5>
+              <p>The most accurate powder forecasts for Snowmass, Highlands, Buttermilk and ajax</p>
+
+            </div>
+           <!-- <button margin padding ion-button small color="primary"
+                    class="brnone" [navPush]="membershipOptionsPage">BECOME A MEMBER ></button> -->
+          </div>
+        </ion-slide>
+       <ion-slide>
+          <div margin class="slides_join">
+            <div margin-left margin-right padding>
+              <img src="./assets/icons/plane.png" class="medium_img"/>
+              <h5 class="marg0" text-center style="font-size: 17px;">AIRPORT DELAY INDICATOR</h5>
+              <p>Aspen weather is setup for pilots flying into Aspen.</p>
+            </div>
+            <hr class="slides_join_line"/>
+            <div margin-left margin-right padding>
+              <img src="./assets/icons/webcam.png" class="medium_img"/>
+              <h5 class="marg0" margin-top text-center>WEBCAMS</h5>
+              <p>View the worlds only live Aspen webcams in town and at the Airport!</p>
+
+            </div>
+           <!-- <button margin padding ion-button small color="primary"
+                    class="brnone" [navPush]="membershipOptionsPage">BECOME A MEMBER ></button> -->
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div margin class="slides_join">
+            <div margin-left margin-right style="padding: 12px;">
+              <img src="./assets/icons/bell.png" class="medium_img"/>
+              <h5 class="marg0" text-center style="font-size: 17px;">MOBILE APP NOTIFICATIONS</h5>
+              <p>Download our mobile app for accurate weather on the go</p>
+            </div>
+            <hr class="slides_join_line"/>
+            <div margin-left margin-right style="padding: 12px;">
+              <img src="./assets/icons/customerslove.png" class="medium_img"/>
+              <h5 class="marg0" margin-top text-center>CUSTOMERS LOVE US!</h5>
+              <p>"I never visit Aspen without AspenWeather.net!"</p>
+              <p>"As a pilot who flies into Aspen few times in month, it's an invaluable too!"</p>
+
+            </div>
+           <!-- <button margin padding ion-button small color="primary"
+                    class="brnone" [navPush]="membershipOptionsPage">BECOME A MEMBER ></button>-->
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+      <p margin class="swipe_pagination_hint small_txt swipe_hint">< SWIPE FOR MORE > </p>
+  </div>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+      <ion-slides autoplay="500" loop="true" speed="3000">
+      <ion-slide>
+      <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.snowmassrecreation.com" target="_blank"><img style="padding: 10px;margin:0;" src= {{ads_data[0]?.image}}></a>
+    </ion-slide>
+      <ion-slide>
+      <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.aspengloballuxury.com" target="_blank"><img style="padding: 10px;margin:0;" src= {{ads_data[1]?.image}}></a>
+      </ion-slide>
+      <ion-slide>
+      <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://sednafilms.com" target="_blank"><img style="padding: 10px;margin:0;" src= {{ads_data[2]?.image}}></a>
+      </ion-slide>
+      <!--<ion-slide>
+      <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.snowmassrecreation.com" target="_blank"><img style=" padding-right: 13px;" src= {{ads_data[3]?.image}}></a>
+      </ion-slide>
+      <ion-slide>
+      <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.dalypropserv.com" target="_blank"><img style=" padding-right: 13px;" src= {{ads_data[4]?.image}}></a>
+      </ion-slide>-->
+      </ion-slides>
+      
+     </ion-toolbar>
+  <!-- <footer-component></footer-component> -->
+</ion-footer>

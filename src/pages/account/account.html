@@ -1,0 +1,38 @@
+<ion-header>
+        <header-component [headerpush]="header"></header-component>
+      </ion-header>
+      
+    <ion-content has-header padding class="content_box ">
+    <div padding-bottom class="login_bg box_background">
+
+    <div margin padding>
+     
+      <h5 class="marg5" text-centre>ACCOUNT DETAILS</h5>
+      <span [innerHTML]="apiData?.page?.content"></span>
+     <ion-list padding-top padding-left padding-right>
+     <span  style="float:left">
+      Username *(cannot be changed)</span>
+     <br>
+      <span [innerHTML]="userName"></span>
+      <br>
+     <!-- <ion-input type="" placeholder="Username" name="{{email}}"></ion-input> -->
+     <span  style="float:left">
+      Email Address*</span>
+     <br>
+      <span [innerHTML]="email"></span>
+     <br>
+     <br>
+     <!-- <ion-input type="" placeholder="Email Address" name="Email Address"></ion-input> -->
+     <hr class="slides_join_line"/>
+     <span  style="float:left">New Password? (please type it twice)
+      Only if changing password, otherwise leave blank.</span>
+     <ion-input type="password" placeholder="New Password" name="password"></ion-input>
+     <ion-input type="password" placeholder="Re-New Password" name="password"></ion-input>
+    </ion-list>
+     <button ion-button (click)="SaveChanges()">Save Changes</button>
+    </div>
+
+    
+  </div>
+    
+      </ion-content>

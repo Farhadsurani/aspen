@@ -1,0 +1,28 @@
+<!--
+  Generated template for the WebcamPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<meta name="viewport" content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover">
+<ion-toolbar color="headercolor">
+  <ion-buttons left *ngIf="headerpush.ismenu">
+    <!-- left aligned content here -->
+    <button ion-button (click)="menutoggle();">
+          <img  src="./assets/icons/menuonpage/menu.png" class="icons"/>
+    </button>
+  </ion-buttons>
+  <ion-title *ngIf="headerpush.ishome"><img src="https://aspenweather.net/wp-content/uploads/2017/10/aspen-logo-210x110.png" class="asp_header_logo"/></ion-title>
+  <ion-buttons right *ngIf="headerpush.share">
+    <button ion-button (click)="sharefb();">
+      <!-- <img src="./assets/icons/menuonpage/facebook.png" class="icons"/> -->
+      <ion-icon name="logo-facebook" ></ion-icon>
+    </button>
+    <button ion-button (click)="sharetw();">
+        <ion-icon name="logo-twitter"></ion-icon>
+      <!-- <img src="./assets/icons/menuonpage/twitter.png" class="icons"/> -->
+    </button>
+
+
+  </ion-buttons>
+</ion-toolbar>

@@ -1,0 +1,93 @@
+<!--
+  Generated template for the NavigationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar color="headercolor">
+    <ion-buttons left>
+
+
+      <button ion-button (click)="dismiss();">
+       <!-- <ion-icon color="light" name="close" class="close_nav"></ion-icon>-->
+        <img  src="./assets/icons/menuonpage/exit.png" class="close_nav"/>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+<!--<ion-navbar *navbar>
+  <ion-title>
+    Page Modal
+  </ion-title>
+</ion-navbar>-->
+<ion-content has-header padding class="">
+  <div padding class="box_background">
+    <ion-list>
+      <ion-item *ngFor="let d of weather; let i=index" text-wrap (click)="toggleGroup(i)"
+              [class.activeHighlight] = "checkactive(i)" [ngClass]="{active: isGroupShown(i)}">
+        <p>{{d.title}}</p>
+        <ion-icon color="light" class="top_align" item-right *ngIf="d.childs.length > 0;"
+                  [name]="isGroupShown() ? 'ios-more' : 'ios-add'"></ion-icon>
+        <div *ngIf="d.childs.length > 0;">
+          <div *ngIf="isGroupShown(i);"> 
+            <div *ngFor="let c of d.childs" class="padding10 innerlist_child" margin-left>
+
+              <p  *ngIf = "c.title != 'Logout'" (click)="changePage(c.href,c.params);" >{{c.title}}</p>
+              <p  *ngIf = "c.title == 'Logout'" (click)="changePage(c.href,c.params);">{{userID ? "Logout":"Login"}}</p>
+              <!--<p  *ngIf = "c.title == 'Logout' && userID !=''" (click)="changePage(c.href,c.params);" >{{userID}}</p>-->
+            </div>
+          </div>
+        </div>
+      </ion-item>
+     
+      <!-- <ion-item [navPush]="webcampage">
+        <p ion-text></p>
+      </ion-item> -->
+      <!-- <ion-item>
+       <p ion-text [navPush]="cardPage">Payments</p>
+      </ion-item> -->
+       <ion-item>
+        <p ion-text [navPush] = "aboutUSPage"></p>
+        
+      </ion-item>
+      <!-- <ion-item> -->
+        <!-- <p ion-text [navPush] = "CumulativeSnowfallPage"></p> -->
+      <!-- </ion-item> -->
+       <!-- <ion-item> -->
+      <!-- <ion-item  [navPush]="CumulativeSnowfallPage"> -->
+        <!-- <p ion-text  [navPush]="cardPage">Payments</p> -->
+      <!-- </ion-item><ion-item>
+          <p ion-text>Why Join ?</p> -->
+      <!-- </ion-item> -->
+      
+      <!-- <ion-item (click)="presentConfirm();">
+        <p ion-text></p>
+      </ion-item>
+      <ion-item  [navPush]="JoinNowPage">
+          <p ion-text></p>
+        </ion-item>
+
+      <ion-item class="last_menu" [navPush]="membershipOptionsPage">
+        <p ion-text></p>
+      </ion-item> -->
+    </ion-list>
+    <div>
+        <ion-buttons >
+            <button ion-button (click)="sharefb();">
+              <!-- <img src="./assets/icons/menuonpage/facebook.png" class="icons"/> -->
+              <ion-icon name="logo-facebook" ></ion-icon>
+            </button>
+            <button ion-button (click)="sharetw();">
+                <ion-icon name="logo-twitter"></ion-icon>
+              <!-- <img src="./assets/icons/menuonpage/twitter.png" class="icons"/> -->
+            </button>
+        
+        
+          </ion-buttons>
+      <!-- <img src="./assets/icons/menuonpage/facebook.png" class="icons"/> -->
+      <!-- <img src="./assets/icons/menuonpage/twitter.png" class="icons"/> -->
+    </div>
+  </div>
+</ion-content>

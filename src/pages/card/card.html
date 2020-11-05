@@ -1,0 +1,107 @@
+<ion-header>
+    <header-component [headerpush]="header"></header-component>
+  </ion-header>
+  
+<ion-content has-header padding class="content_box ">
+
+    <div margin-top class="login_bg box_background rel" style="overflow-y: scroll; height: 605px;">
+    <div padding>
+  
+      <ion-list padding-top padding-left padding-right>
+        <p class="medium_txt" text-center>Payment</p>
+        <ion-item class="">
+                <ion-avatar item-end>
+                        <ion-icon name="card"></ion-icon>
+                        <!-- <img src="./assets/icons/loginicon.png" class="avatar_input"/> -->
+                      </ion-avatar>
+            
+          <ion-input type="number" [(ngModel)]="card.number" placeholder="Card Number  *"  ></ion-input>
+  
+        </ion-item>
+        <br/>
+        <ion-item>
+                <ion-avatar item-end>
+                        <ion-icon  name="calendar"></ion-icon>
+                       
+                      </ion-avatar>
+            
+               
+            <ion-input type="number" [(ngModel)]="card.expMonth" placeholder="ExpirationDate(mm) *"></ion-input>
+        </ion-item>
+        <br/>
+        <ion-item>
+                <ion-avatar item-end>
+                        <ion-icon name="calendar"></ion-icon>
+                      
+                      </ion-avatar>
+            <ion-input type="number" [(ngModel)]="card.expYear" placeholder="ExpirationYear(yyyy) *"></ion-input>
+        </ion-item>
+        <br/>
+        <ion-item>
+                <ion-avatar item-end>
+                        <ion-icon name="card"></ion-icon>
+                       
+                      </ion-avatar>
+        <ion-input type="number" [(ngModel)]="card.cvc" placeholder="C.V.V *"></ion-input>
+      </ion-item>
+        <br/>
+        <br/>
+        <p class="medium_txt" text-center>Billing Address</p>
+
+        <br/>
+      <!-- street address -->
+        <ion-item>
+            <ion-avatar item-end>
+                    <ion-icon name="home"></ion-icon>
+                   
+                  </ion-avatar>
+              <ion-input [(ngModel)]="card.StreetAddress" placeholder="Street Address *"></ion-input>
+               </ion-item>
+         <br/>
+<!-- City / Town * -->
+<ion-item>
+    <ion-avatar item-end>
+            <ion-icon name="home"></ion-icon>
+           
+          </ion-avatar>
+<ion-input [(ngModel)]="card.City" placeholder="City / Town *"></ion-input>
+</ion-item>
+ <br/>
+ <!-- State / Province * -->
+ <ion-item>
+    <ion-avatar item-end>
+            <ion-icon name="locate"></ion-icon>
+           
+          </ion-avatar>
+<ion-input [(ngModel)]="card.State" placeholder="State / Province *"></ion-input>
+</ion-item>
+ <br/>
+
+<!-- Postal / Zip Code * -->
+<ion-item>
+    <ion-avatar item-end>
+            <ion-icon name="locate"></ion-icon>
+           
+          </ion-avatar>
+<ion-input type="number" [(ngModel)]="card.Postal" placeholder="Postal / Zip Code *"></ion-input>
+</ion-item>
+ <br/>
+ <!-- Country * -->
+ <ion-item>
+    <ion-avatar item-end>
+            <ion-icon name="globe"></ion-icon>
+           
+          </ion-avatar>
+<ion-input [(ngModel)]="card.Country" placeholder="Country *"></ion-input>
+</ion-item>
+ <br/>
+
+      
+        <button ion-button (click)="pay()"> Pay Now </button>
+    
+        </ion-list>
+     
+    </div>
+  </div>
+  
+  </ion-content>

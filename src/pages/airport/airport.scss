@@ -1,0 +1,71 @@
+page-airport {
+$input_border_color : 0.5px solid rgba(167, 169, 172, 0.34);
+$lastitem_border_color : 0.5px solid #fdd713 !important;
+$normalfontcolor : #ffffff !important;
+.primary{
+  color: map-get($colors,primary) !important;
+}.sec{
+  color: map-get($colors,secondary) !important;
+}.dan{
+  color: map-get($colors,danger) !important;
+}
+
+p,span {
+        font-family: futura;
+         color: $normalfontcolor;
+         font-size: 1.2rem;
+}
+ .list{
+ color: $normalfontcolor;
+ margin-bottom:10px;
+.item {
+    background-color: transparent;
+    .item-inner{
+
+      border-bottom: $input_border_color;
+    }
+    .menu_txt{
+              color: map-get($colors,primary) !important;
+        }
+
+
+}
+
+}
+
+
+.close_nav{
+      height : 20px;
+      width:auto;
+      margin  : 15px;
+}
+.top_align{
+  align-self: flex-start;
+}
+
+.innerlist_child{
+                        border-bottom: $input_border_color;
+                        h4{
+                              font-size: 1.8rem !important;
+                        }
+                    }
+   .innerlist_child:last-child {
+                           border-bottom: none;
+                       }
+
+.last_menu .item-inner{
+                    border-bottom: $lastitem_border_color;
+     }
+
+
+     body{
+      padding-top: constant(safe-area-inset-top);
+      padding-top: env(safe-area-inset-top);
+  }
+
+  .toolbar-footer{
+      margin-bottom: constant(safe-area-inset-bottom);
+      margin-bottom: env(safe-area-inset-bottom);
+  }
+
+}

@@ -1,0 +1,13 @@
+page-aboutUS{
+
+    body{
+        padding-top: constant(safe-area-inset-top);
+        padding-top: env(safe-area-inset-top);
+    }
+
+    .toolbar-footer{
+        margin-bottom: constant(safe-area-inset-bottom);
+        margin-bottom: env(safe-area-inset-bottom);
+    }
+    
+}

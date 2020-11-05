@@ -1,0 +1,614 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <header-component [headerpush]="header"></header-component>
+</ion-header>
+
+<ion-content has-header padding class="content_box">
+
+  <div margin-top class="login_bg box_background rel">
+    <div style="height:510px;">
+      <ion-slides pager="true" (ionSlideDidChange)="slideChanged()" #slides>
+
+        <!--weather screen-->
+        <ion-slide>
+          <div *ngIf="!isArrayEmpty(weather_data)">
+              <div margin class="fixedContent" ion-fixed>
+            <ion-grid class="padding0 weather_head">
+              <ion-row>
+                <ion-col col-6 class="vertical_align">
+                    <img src="https://developer.accuweather.com/sites/default/files/{{ weather_data_days.DailyForecasts[0].Day.Icon < 10 ?'0'+ weather_data_days.DailyForecasts[0].Day.Icon : weather_data_days.DailyForecasts[0].Day.Icon }}-s.png" class=""/>
+                  <!--<img src="./assets/icons/weather/5.png" class="weathernormal_img"/>-->
+                </ion-col>
+                <ion-col col-6 class="vertical_align">
+                  <h1 class="">{{currentweather}}&#8457;</h1>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <h5 class="marg0" text-center></h5>
+            <p class="p_txt marg0" text-center>{{weather_data_current[0]?.WeatherText}}</p>
+            <!-- <p class="p_txt marg0" text-center>WINDY NMX {{wind}} MPH</p> -->
+            <p class="p_txt marg0" text-center>FEELS LIKE {{feelweather}}&#8457;</p>
+           <!-- <button padding ion-button text-center small color="primary" (click)="weatherDiscussion();" class="brnone margintb_10">
+              Weather discussion
+            </button> -->
+            </div>
+            <div style="padding: 5px;height:340px; overflow:auto;margin-left: 5px;margin-right: 5px;margin-top:140px;">
+            <hr class="hourlygrid_line">
+            <ion-scroll scrollY="true" class="nomp">
+            <ion-grid class="padding0 ">
+              <ion-row>
+                <ion-col>
+                  <p class="small_txt" text-center>{{weather_data_hours[0]?.DateTime  | date:"h a"}}</p>
+                  <img src="https://developer.accuweather.com/sites/default/files/{{ weather_data_hours[0].WeatherIcon < 10 ?'0'+  weather_data_hours[0].WeatherIcon :  weather_data_hours[0].WeatherIcon }}-s.png" class="hourly_img"/>
+                  <p class="small_txt" text-center>{{hour1}}&#8457;</p>
+                </ion-col>
+                <ion-col>
+                  <p class="small_txt" text-center>{{weather_data_hours[1]?.DateTime  | date:"h a"}}</p>
+                  <img src="https://developer.accuweather.com/sites/default/files/{{ weather_data_hours[1].WeatherIcon < 10 ?'0'+  weather_data_hours[1].WeatherIcon :  weather_data_hours[1].WeatherIcon }}-s.png" class="hourly_img"/>
+                  <p class="small_txt" text-center>{{hour2}}&#8457;</p>
+                </ion-col>
+                <ion-col>
+                  <p class="small_txt" text-center>{{weather_data_hours[2]?.DateTime  | date:"h a"}}</p>
+                  <img src="https://developer.accuweather.com/sites/default/files/{{ weather_data_hours[2].WeatherIcon < 10 ?'0'+  weather_data_hours[2].WeatherIcon :  weather_data_hours[2].WeatherIcon }}-s.png" class="hourly_img"/>
+                  <p class="small_txt" text-center>{{hour3}}&#8457;</p>
+                </ion-col>
+                <ion-col>
+                  <p class="small_txt" text-center>{{weather_data_hours[3]?.DateTime  | date:"h a"}}</p>
+                  <img src="https://developer.accuweather.com/sites/default/files/{{ weather_data_hours[3].WeatherIcon < 10 ?'0'+  weather_data_hours[3].WeatherIcon :  weather_data_hours[3].WeatherIcon }}-s.png" class="hourly_img"/>
+                  <p class="small_txt" text-center>{{hour4}}&#8457;</p>
+                </ion-col>
+                <ion-col>
+                  <p class="small_txt" text-center>{{weather_data_hours[4]?.DateTime  | date:"h a"}}</p>
+                  <img src="https://developer.accuweather.com/sites/default/files/{{ weather_data_hours[4].WeatherIcon < 10 ?'0'+  weather_data_hours[4].WeatherIcon :  weather_data_hours[4].WeatherIcon }}-s.png" class="hourly_img"/>
+                  <p class="small_txt" text-center>{{hour5}}&#8457;</p>
+                </ion-col>
+                <ion-col>
+                  <p class="small_txt" text-center>{{weather_data_hours[5]?.DateTime  | date:"h a"}}</p>
+                  <img src="https://developer.accuweather.com/sites/default/files/{{ weather_data_hours[5].WeatherIcon < 10 ?'0'+  weather_data_hours[5].WeatherIcon :  weather_data_hours[5].WeatherIcon }}-s.png" class="hourly_img"/>
+                  <p class="small_txt" text-center>{{hour6}}&#8457;</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                    <p class="small_txt" text-center>{{weather_data_hours[6]?.DateTime  | date:"h a"}}</p>
+                    <img src="https://developer.accuweather.com/sites/default/files/{{ weather_data_hours[6].WeatherIcon < 10 ?'0'+  weather_data_hours[6].WeatherIcon :  weather_data_hours[6].WeatherIcon }}-s.png" class="hourly_img"/>
+                    <p class="small_txt" text-center>{{hour7}}&#8457;</p>
+                  </ion-col>
+                  <ion-col>
+                    <p class="small_txt" text-center>{{weather_data_hours[7]?.DateTime  | date:"h a"}}</p>
+                    <img src="https://developer.accuweather.com/sites/default/files/{{ weather_data_hours[7].WeatherIcon < 10 ?'0'+  weather_data_hours[7].WeatherIcon :  weather_data_hours[7].WeatherIcon }}-s.png" class="hourly_img"/>
+                    <p class="small_txt" text-center>{{hour8}}&#8457;</p>
+                  </ion-col>
+                  <ion-col>
+                    <p class="small_txt" text-center>{{weather_data_hours[8]?.DateTime  | date:"h a"}}</p>
+                    <img src="https://developer.accuweather.com/sites/default/files/{{ weather_data_hours[8].WeatherIcon < 10 ?'0'+  weather_data_hours[8].WeatherIcon :  weather_data_hours[8].WeatherIcon }}-s.png" class="hourly_img"/>
+                    <p class="small_txt" text-center>{{hour9}}&#8457;</p>
+                  </ion-col>
+                  <ion-col>
+                    <p class="small_txt" text-center>{{weather_data_hours[9]?.DateTime  | date:"h a"}}</p>
+                    <img src="https://developer.accuweather.com/sites/default/files/{{ weather_data_hours[9].WeatherIcon < 10 ?'0'+  weather_data_hours[9].WeatherIcon :  weather_data_hours[9].WeatherIcon }}-s.png" class="hourly_img"/>
+                    <p class="small_txt" text-center>{{hour10}}&#8457;</p>
+                  </ion-col>
+                  <ion-col>
+                    <p class="small_txt" text-center>{{weather_data_hours[10]?.DateTime  | date:"h a"}}</p>
+                    <img src="https://developer.accuweather.com/sites/default/files/{{ weather_data_hours[10].WeatherIcon < 10 ?'0'+  weather_data_hours[10].WeatherIcon :  weather_data_hours[10].WeatherIcon }}-s.png" class="hourly_img"/>
+                    <p class="small_txt" text-center>{{hour11}}&#8457;</p>
+                  </ion-col>
+                  <ion-col>
+                    <p class="small_txt" text-center>{{weather_data_hours[11]?.DateTime  | date:"h a"}}</p>
+                    <img src="https://developer.accuweather.com/sites/default/files/{{ weather_data_hours[11].WeatherIcon < 10 ?'0'+  weather_data_hours[11].WeatherIcon :  weather_data_hours[11].WeatherIcon }}-s.png" class="hourly_img"/>
+                    <p class="small_txt" text-center>{{hour12}}&#8457;</p>
+                  </ion-col>
+              </ion-row>
+            </ion-grid>
+            </ion-scroll>
+            <hr class="hourlygrid_line"/>
+            <div>
+            <ion-grid class="padding0 nomp">
+              <ion-row>
+                <ion-col>
+                  <p class="small_txt" text-center style="height: 36px;">{{weather_data_days.DailyForecasts[0].Date | date:"EEEE"}} {{weather_data_days.DailyForecasts[0].Date | date:"MMM dd"}}</p>
+                  <img src="https://developer.accuweather.com/sites/default/files/{{ weather_data_days.DailyForecasts[0].Day.Icon < 10 ?'0'+ weather_data_days.DailyForecasts[0].Day.Icon : weather_data_days.DailyForecasts[0].Day.Icon }}-s.png" class="hourly_img"/>
+                  <p class="small_txt" text-center>{{weather_data_days.DailyForecasts[0].Day.IconPhrase}}</p>
+                  <p class="small_txt" text-center>{{weather_data_days.DailyForecasts[0].Temperature.Maximum.Value}}/{{weather_data_days.DailyForecasts[0].Temperature.Minimum.Value}}</p>
+                  </ion-col>
+                <ion-col>
+                  <p class="small_txt" text-center style="height: 36px;">{{weather_data_days.DailyForecasts[1].Date | date:"EEEE"}} {{weather_data_days.DailyForecasts[1].Date | date:"MMM dd"}}</p>
+                  <img src="https://developer.accuweather.com/sites/default/files/{{ weather_data_days.DailyForecasts[1].Day.Icon < 10 ?'0'+ weather_data_days.DailyForecasts[1].Day.Icon : weather_data_days.DailyForecasts[1].Day.Icon }}-s.png" class="hourly_img"/>
+                     
+                  <p class="small_txt" text-center>{{weather_data_days.DailyForecasts[1].Day.IconPhrase}}</p>
+                  <p class="small_txt" text-center>{{weather_data_days.DailyForecasts[1].Temperature.Maximum.Value}}/{{weather_data_days.DailyForecasts[1].Temperature.Minimum.Value}}</p>
+                  </ion-col>
+                <ion-col>
+                  <p class="small_txt" text-center style="height: 36px;">{{weather_data_days.DailyForecasts[2].Date | date:"EEEE"}} {{weather_data_days.DailyForecasts[2].Date | date:"MMM dd"}}</p>
+                  <img src="https://developer.accuweather.com/sites/default/files/{{ weather_data_days.DailyForecasts[2].Day.Icon < 10 ?'0'+ weather_data_days.DailyForecasts[2].Day.Icon : weather_data_days.DailyForecasts[2].Day.Icon }}-s.png" class="hourly_img"/>
+                      
+                  <p class="small_txt" text-center>{{weather_data_days.DailyForecasts[2].Day.IconPhrase}}</p>
+                  <p class="small_txt" text-center>{{weather_data_days.DailyForecasts[2].Temperature.Maximum.Value}}/{{weather_data_days.DailyForecasts[2].Temperature.Minimum.Value}}</p>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+            </div>
+          </div>
+        </ion-slide>
+
+        <!--weather discussion-->
+        <ion-slide>
+          <div margin class="fixedContent" ion-fixed>
+            <img src="./assets/icons/bubble.png" style="max-width: 35px;">
+            <h5 class="marg51" text-center>{{forecast_discussion_arr?.title}}</h5>
+            
+          </div>
+          
+          <div style="padding: 5px;height:340px;font:16px/26px Georgia, Garamond, Serif;overflow:auto;margin-left: 5px;margin-right: 5px;margin-top:140px;">
+            <div class="dssc_font" [innerHTML]=forecast_discussion_arr?.content></div>
+            </div>
+        </ion-slide>
+
+        <!--powder forecast -->
+        <!--<ion-slide>
+          <div margin class="fixedContent" ion-fixed>
+          <img src="./assets/icons/forecast.png" class="medium_img"/>
+          <h5 class="marg5" text-center>POWDER FORECAST</h5>
+          </div>
+          <div class="fixedcontent1 powder_forecast">
+          <table>
+            <tr>
+                <th height="62"></th>
+                <th class="table_column"><p  class="rotate">BUTTERMILK</p></th>
+                <th class="table_column"><p  class="rotate">HIGHLANDS</p></th>
+                <th class="table_column"><p  class="rotate">SNOWMASS</p></th>
+                <th class="table_column"><p  class="rotate">AJAX</p></th>
+            </tr>
+
+            <tr>
+              <td text-center class="padding10">
+                <p class="small_txt_white1 marg0">{{dayone}}</p>
+              </td>
+              <td class="small_txt" text-center>{{powderforecast_data?.buttermilk1}}</td>
+              <td class="small_txt" text-center>{{powderforecast_data?.highlands1}}</td>
+              <td class="small_txt" text-center>{{powderforecast_data?.snowmass1}}</td>
+              <td class="small_txt" text-center>{{powderforecast_data?.ajax1}}</td>
+            </tr>
+            <tr>
+              <td text-center class="padding10">
+                <p class="small_txt_white1 marg0">{{daytwo}}</p>
+              </td>
+              <td class="small_txt" text-center>{{powderforecast_data?.buttermilk2}}</td>
+              <td class="small_txt" text-center>{{powderforecast_data?.highlands2}}</td>
+              <td class="small_txt" text-center>{{powderforecast_data?.snowmass2}}</td>
+              <td class="small_txt" text-center>{{powderforecast_data?.ajax2}}</td>
+            </tr>
+            <tr>
+              <td text-center class="padding10">
+                <p class="small_txt_white1 marg0">{{daythree}}</p>
+              </td>
+              <td class="small_txt" text-center>{{powderforecast_data?.buttermilk3}}</td>
+              <td class="small_txt" text-center>{{powderforecast_data?.highlands3}}</td>
+              <td class="small_txt" text-center>{{powderforecast_data?.snowmass3}}</td>
+              <td class="small_txt" text-center>{{powderforecast_data?.ajax3}}</td>
+            </tr>
+            <tr>
+              <td text-center class="padding10">
+                <p class="small_txt_white1 marg0">{{dayfour}}</p>
+              </td>
+              <td class="small_txt" text-center>{{powderforecast_data?.buttermilk4}}</td>
+              <td class="small_txt" text-center>{{powderforecast_data?.highlands4}}</td>
+              <td class="small_txt" text-center>{{powderforecast_data?.snowmass4}}</td>
+              <td class="small_txt" text-center>{{powderforecast_data?.ajax4}}</td>
+            </tr>
+            <tr>
+              <td text-center class="padding10">
+                <p class="small_txt_white1 marg0">{{dayfive}}</p>
+              </td>
+              <td class="small_txt" text-center>{{powderforecast_data?.buttermilk5}}</td>
+              <td class="small_txt" text-center>{{powderforecast_data?.highlands5}}</td>
+              <td class="small_txt" text-center>{{powderforecast_data?.snowmass5}}</td>
+              <td class="small_txt" text-center>{{powderforecast_data?.ajax5}}</td>
+            </tr>
+            <tr>
+              <td text-center class="padding10">                
+                <p class="small_txt_white1 marg0">{{daysix}}</p>
+              </td>
+              <td class="small_txt" text-center>{{powderforecast_data?.buttermilk6}}</td>
+              <td class="small_txt" text-center>{{powderforecast_data?.highlands6}}</td>
+              <td class="small_txt" text-center>{{powderforecast_data?.snowmass6}}</td>
+              <td class="small_txt" text-center>{{powderforecast_data?.ajax6}}</td>
+            </tr>
+          </table>
+          </div>
+        </ion-slide>-->
+        <!--<p class="small_txt swipe_hint marg0">{{powderforecast_data?.day6}}</p>-->
+
+        <!--airport-->
+        <ion-slide>
+          <div>
+              <div margin class="fixedContent" ion-fixed>
+            <img src="./assets/icons/plane.png" style="max-width: 35px;"/>
+            <h5 class="marg5" text-center>DELAY INDICATOR</h5>
+          </div>
+          <div margin class="slides_join fixedcontent1">
+            <div padding margin-left margin-right>
+              <p class="p_txt" text-center>{{airportdelay_data?.custom_fields?.day_1_day}}</p>
+              <span *ngIf=" airportdelay_data?.custom_fields?.day_1_status == 'low'">
+              <img src= "./assets/icons/airport/sunday.png" />
+              </span>
+              <span *ngIf=" airportdelay_data?.custom_fields?.day_1_status == 'medium'">
+                <img src= "./assets/icons/airport/monday.png" />
+              </span>
+              <span *ngIf=" airportdelay_data?.custom_fields?.day_1_status == 'high'">
+                <img src= "./assets/icons/airport/tuasday.png" />
+              </span>
+              <p class="delay_txt" text-center>{{airportdelay_data?.custom_fields?.day_1_status}}</p>
+              <p class="small_txt marg0" text-center>{{airportdelay_data?.custom_fields?.day_1_status_text}}</p>
+             <!-- [innerHTML]=airportdelay_data?.custom_fields?.day_1_status_text -->
+                 
+            </div>
+            <hr class="slides_join_line"/>
+            <div padding margin-left margin-right>
+              <p class="p_txt" text-center>{{airportdelay_data?.custom_fields?.day_2_day}}</p>
+              <span *ngIf=" airportdelay_data?.custom_fields?.day_2_status == 'low'">
+                <img src= "./assets/icons/airport/sunday.png" />
+              </span>
+              <span *ngIf=" airportdelay_data?.custom_fields?.day_2_status == 'medium'">
+                <img src= "./assets/icons/airport/monday.png" />
+              </span>
+              <span *ngIf=" airportdelay_data?.custom_fields?.day_2_status == 'high'">
+                <img src= "./assets/icons/airport/tuasday.png" />
+              </span>
+              <p class="delay_txt" text-center>{{airportdelay_data?.custom_fields?.day_2_status}}</p>
+              <p class="small_txt marg0" text-center>{{airportdelay_data?.custom_fields?.day_2_status_text}}</p>
+            </div>
+            <hr class="slides_join_line"/>
+            <div padding margin-left margin-right>
+              <p class="p_txt" text-center>{{airportdelay_data?.custom_fields?.day_3_day}}</p>
+              <span *ngIf=" airportdelay_data?.custom_fields?.day_3_status == 'low'">
+                <img src= "./assets/icons/airport/sunday.png" />
+              </span>
+              <span *ngIf=" airportdelay_data?.custom_fields?.day_3_status == 'medium'">
+                <img src= "./assets/icons/airport/monday.png" />
+              </span>
+              <span *ngIf=" airportdelay_data?.custom_fields?.day_3_status == 'high'">
+                <img src= "./assets/icons/airport/tuasday.png" />
+              </span>
+              <p class="delay_txt" text-center>{{airportdelay_data?.custom_fields?.day_3_status}}</p>
+              <p class="small_txt marg0" text-center>{{airportdelay_data?.custom_fields?.day_3_status_text}}</p>
+            </div>
+          </div>
+          </div>
+          <a href="#" (click)="airport_status_info();" class="fixed_page_img">
+            <img src="./assets/icons/info.png" class="hourly_img"/>
+          </a>
+
+        </ion-slide>
+
+         <!--CUMULATIVE SNOWFALL-->        
+        <!--<ion-slide>         
+            <div margin class="fixedContent" ion-fixed>
+                  <img src="./assets/icons/cumulative.png"/>
+                  <h5 class="marg5" text-center>CUMULATIVE SNOWFALL</h5>
+                </div>
+                <div class="fixedcontent1">
+                  <canvas padding baseChart
+                          [datasets]="barChartData"
+                          [labels]="barChartLabels"
+                          [options]="barChartOptions"
+                          [legend]="barChartLegend"
+                          [colors] = "chartColors"
+                          [chartType]="barChartType"
+                          (chartHover)="chartHovered($event)"
+                          (chartClick)="chartClicked($event)"
+                          
+                          height="350" ></canvas>
+                          </div>
+        </ion-slide>  
+                
+        <ion-slide>
+          <div margin class="fixedContent" ion-fixed>
+            <img src="./assets/icons/calendar.png"/>
+            <h5 class="marg5" text-center>SNOWFALL CALENDAR</h5>
+          </div>
+          <div class="fixedcontent1">
+            <table >
+           
+                   
+              <tr>
+             
+                  <td class="small_txt" text-center>{{calenderdata[0]?.start_date_details.day}}</td>
+                  <td class="small_txt" text-center>{{calenderdata[1]?.start_date_details.day}}</td>
+                  <td class="small_txt" text-center>{{calenderdata[2]?.start_date_details.day}}</td>
+              </tr>
+  
+              <tr>
+               
+                <td class="small_txt" class="rems" [innerHTML]="calenderdata[0]?.description">
+                </td>
+                <td class="small_txt" class="rems"   [innerHTML]="calenderdata[1]?.description">
+                </td>
+                <td class="small_txt" class="rems"   [innerHTML]="calenderdata[2]?.description">
+                </td>
+            
+                
+              </tr>
+              <tr>
+             
+                  <td class="small_txt" text-center>{{calenderdata[3]?.start_date_details.day}}</td>
+                  <td class="small_txt" text-center>{{calenderdata[4]?.start_date_details.day}}</td>
+                  <td class="small_txt" text-center>{{calenderdata[5]?.start_date_details.day}}</td>
+              </tr>
+  
+              <tr>
+               
+                <td class="small_txt" class="rems"  [innerHTML]="calenderdata[3]?.description">
+                </td>
+                <td class="small_txt" class="rems"   [innerHTML]="calenderdata[4]?.description">
+                </td>
+                <td class="small_txt" class="rems" [innerHTML]="calenderdata[5]?.description">
+                </td>
+            
+                
+              </tr>
+              <tr>
+             
+                  <td class="small_txt" text-center>{{calenderdata[6]?.start_date_details.day}}</td>
+                  <td class="small_txt" text-center>{{calenderdata[7]?.start_date_details.day}}</td>
+                  <td class="small_txt" text-center>{{calenderdata[8]?.start_date_details.day}}</td>
+              </tr>
+  
+              <tr>
+               
+                <td class="small_txt" class="rems"   [innerHTML]="calenderdata[6]?.description">
+                </td>
+                <td class="small_txt" class="rems"  [innerHTML]="calenderdata[7]?.description">
+                </td>
+                <td class="small_txt" class="rems" [innerHTML]="calenderdata[8]?.description">
+                </td>
+            
+                
+              </tr>
+              <tr>
+             
+                  <td class="small_txt" text-center>{{calenderdata[9]?.start_date_details.day}}</td>
+                  <td class="small_txt" text-center>{{calenderdata[10]?.start_date_details.day}}</td>
+                  <td class="small_txt" text-center>{{calenderdata[11]?.start_date_details.day}}</td>
+              </tr>
+  
+              <tr>
+               
+                <td class="small_txt" class="rems"  [innerHTML]="calenderdata[9]?.description">
+                </td>
+                <td class="small_txt" class="rems"  [innerHTML]="calenderdata[10]?.description">
+                </td>
+                <td class="small_txt" class="rems"   [innerHTML]="calenderdata[11]?.description">
+                </td>
+            
+                
+              </tr>
+              <tr>
+             
+                  <td class="small_txt" text-center>{{calenderdata[12]?.start_date_details.day}}</td>
+                  <td class="small_txt" text-center>{{calenderdata[13]?.start_date_details.day}}</td>
+                  <td class="small_txt" text-center>{{calenderdata[14]?.start_date_details.day}}</td>
+              </tr>
+  
+              <tr>
+               
+                <td class="small_txt" class="rems"  text-center [innerHTML]="calenderdata[12]?.description">
+                </td>
+                <td class="small_txt" class="rems"  text-center [innerHTML]="calenderdata[13]?.description">
+                </td>
+                <td class="small_txt" class="rems"  text-center [innerHTML]="calenderdata[14]?.description">
+                </td>
+            
+                
+              </tr>
+              <tr>
+             
+                  <td class="small_txt"   text-center>{{calenderdata[15]?.start_date_details.day}}</td>
+                  <td class="small_txt"   text-center>{{calenderdata[16]?.start_date_details.day}}</td>
+                  <td class="small_txt"   text-center>{{calenderdata[17]?.start_date_details.day}}</td>
+              </tr>
+  
+              <tr>
+               
+                <td class="small_txt" class="rems"  [innerHTML]="calenderdata[15]?.description">
+                </td>
+                <td class="small_txt" class="rems"  [innerHTML]="calenderdata[16]?.description">
+                </td>
+                <td class="small_txt" class="rems" [innerHTML]="calenderdata[17]?.description">
+                </td>
+            
+                
+              </tr>
+              <tr>
+             
+                  <td class="small_txt" text-center>{{calenderdata[18]?.start_date_details.day}}</td>
+                  <td class="small_txt" text-center>{{calenderdata[19]?.start_date_details.day}}</td>
+                  <td class="small_txt" text-center>{{calenderdata[20]?.start_date_details.day}}</td>
+              </tr>
+  
+              <tr>
+               
+                <td class="small_txt" class="rems"  [innerHTML]="calenderdata[18]?.description">
+                </td>
+                <td class="small_txt" class="rems"   [innerHTML]="calenderdata[19]?.description">
+                </td>
+                <td class="small_txt" class="rems"  [innerHTML]="calenderdata[20]?.description">
+                </td>
+            
+                
+              </tr>
+              <tr>
+             
+                  <td class="small_txt" text-center>{{calenderdata[21]?.start_date_details.day}}</td>
+                  <td class="small_txt" text-center>{{calenderdata[22]?.start_date_details.day}}</td>
+                  <td class="small_txt" text-center>{{calenderdata[23]?.start_date_details.day}}</td>
+              </tr>
+  
+              <tr>
+               
+                <td class="small_txt" class="rems"   [innerHTML]="calenderdata[21]?.description">
+                </td>
+                <td class="small_txt" class="rems"  [innerHTML]="calenderdata[22]?.description">
+                </td>
+                <td class="small_txt" class="rems"   [innerHTML]="calenderdata[23]?.description">
+                </td>
+            
+                
+              </tr>
+              <tr>
+             
+                  <td class="small_txt" text-center>{{calenderdata[24]?.start_date_details.day}}</td>
+                  <td class="small_txt" text-center>{{calenderdata[25]?.start_date_details.day}}</td>
+                  <td class="small_txt" text-center>{{calenderdata[26]?.start_date_details.day}}</td>
+              </tr>
+  
+              <tr>
+               
+                <td class="small_txt" class="rems"   [innerHTML]="calenderdata[24]?.description">
+                </td>
+                <td class="small_txt" class="rems"   [innerHTML]="calenderdata[25]?.description">
+                </td>
+                <td class="small_txt" class="rems"  [innerHTML]="calenderdata[26]?.description">
+                </td>
+            
+                
+              </tr>
+              <tr>
+             
+                  <td class="small_txt" text-center>{{calenderdata[27]?.start_date_details.day}}</td>
+                  <td class="small_txt" text-center>{{calenderdata[28]?.start_date_details.day}}</td>
+                  <td class="small_txt" text-center>{{calenderdata[29]?.start_date_details.day}}</td>
+              </tr>
+  
+              <tr>
+               
+                <td class="small_txt" class="rems"   [innerHTML]="calenderdata[27]?.description">
+                </td>
+                <td class="small_txt" class="rems"   [innerHTML]="calenderdata[28]?.description">
+                </td>
+                <td class="small_txt" class="rems"  [innerHTML]="calenderdata[29]?.description">
+                </td>
+            
+                
+              </tr>
+           
+              </table>
+          </div>
+        </ion-slide>-->
+       
+
+          <!--T-Storm-Prediction -->
+         <ion-slide>
+           
+               
+            <div margin class="fixedContent" ion-fixed>
+                <img src="https://aspenweather.net/wp-content/uploads/2017/06/storm.png" style="max-width: 35px;" />
+                <h5 class="marg5 slide_title" text-center>T-Storm-Prediction</h5>
+              <p>{{first}}%, {{second}}%, {{thired}}%</p>
+          </div>
+            <div class="fixedcontent1">              
+              <canvas padding baseChart
+                      [datasets]="stromChartData"
+                      [labels]="snowChartLabels"
+                      [options]="strombarChartOptions"
+                      [legend]="barChartLegend"
+                      [colors] = "chartColors"
+                      [chartType]="barChartType"
+                      (chartHover)="chartHovered($event)"
+                      (chartClick)="chartClicked($event)"
+                      height="320"></canvas>
+                      </div>
+    </ion-slide>
+  <!--3 DAY OUTLOOK -->
+    <ion-slide>
+           
+               
+        <div margin class="fixedContent" ion-fixed>
+          <img src="./assets/icons/outlook.png" style="max-width: 35px;" />
+          <h5 class="marg5 slide_title" text-center>3 DAY OUTLOOK</h5>
+
+          <div class="content_details" style="overflow:auto;height: 340px;"> 
+              <ion-grid class="padding0">
+                <ion-row>
+                  <ion-col>
+                    <p class="small_txt" text-center>{{threeDayApiData?.day_1_day}}</p>
+                    <div class="oulook_img"><img src="{{threeimg1}}" class="hourly_img" /></div>
+                    <p class="small_txt" text-center>{{threeDayApiData?.day_1_number}}</p>
+                    <p class="small_txt" text-center>{{threeDayApiData?.day_1_status_text}}</p>
+                    </ion-col>
+                  <ion-col>
+                    <p class="small_txt" text-center>{{threeDayApiData?.day_2_day}}</p>
+                    <div class="oulook_img"><img src="{{ threeimg2 }}" class="hourly_img" /></div>
+                       
+                    <p class="small_txt" text-center>{{threeDayApiData?.day_2_number}}</p>
+                    <p class="small_txt" text-center>{{threeDayApiData?.day_2_status_text}}</p>
+                    </ion-col>
+                  <ion-col>
+                    <p class="small_txt" text-center>{{threeDayApiData?.day_3_day}}</p>
+                    <div class="oulook_img"><img src="{{ threeimg3 }}" class="hourly_img" /></div>
+                        
+                    <p class="small_txt" text-center>{{threeDayApiData?.day_3_number}}</p>
+                    <p class="small_txt" text-center>{{threeDayApiData?.day_3_status_text}}</p>
+                    <br>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+          
+              </div>
+
+            
+        </div>
+          
+    </ion-slide>
+    <!-- <img src="https://aspenweather.net/wp-content/uploads/2017/{{threeDayApiData?.day_1_image}}.png" class="hourly_img"/>  -->
+
+
+   <!-- UV OUTLOOK -->
+   <ion-slide>
+ 
+      <div margin class="fixedContent" ion-fixed>
+        <img src="./assets/icons/uv.png" style="max-width: 35px;" />
+        <h5 class="marg5 slide_title" text-center>UV OUTLOOK</h5>
+        <img class="uv_outlook" src="https://aspenweather.net/wp-content/themes/aspen/images/uv_outlook/{{ UVapiData?.page?.custom_fields?.uv_index_scale }}.png" />
+        <div class="" [innerHTML]=UVapiData?.page?.content></div>
+      </div>
+   
+</ion-slide>
+      </ion-slides>
+    </div>
+    <!-- <p margin class="swipe_pagination_hint small_txt swipe_hint">< SWIPE FOR MORE > </p> -->
+  </div>
+
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-slides autoplay="500" loop="true" speed="3000">
+        <ion-slide>
+        <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.snowmassrecreation.com" target="_blank"><img style="padding: 10px;margin:0;" src= {{ads_data[0]?.image}}></a>
+      </ion-slide>
+        <ion-slide>
+        <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.aspengloballuxury.com" target="_blank"><img style="padding: 10px;margin:0;" src= {{ads_data[1]?.image}}></a>
+        </ion-slide>
+        <ion-slide>
+        <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://sednafilms.com" target="_blank"><img style="padding: 10px;margin:0;" src= {{ads_data[2]?.image}}></a>
+        </ion-slide>
+        <!--<ion-slide>
+        <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.snowmassrecreation.com" target="_blank"><img style=" padding-right: 13px;" src= {{ads_data[3]?.image}}></a>
+        </ion-slide>
+        <ion-slide>
+        <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.dalypropserv.com" target="_blank"><img style=" padding-right: 13px;" src= {{ads_data[4]?.image}}></a>
+        </ion-slide>-->
+        </ion-slides>
+        
+       </ion-toolbar>
+    <!-- <footer-component></footer-component> -->
+  </ion-footer>

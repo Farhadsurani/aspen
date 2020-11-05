@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "840940527567",
+    "firebase_url": "https://aspen-weather.firebaseio.com",
+    "project_id": "aspen-weather",
+    "storage_bucket": "aspen-weather.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840940527567:android:466ca5e1789e5230",
+        "android_client_info": {
+          "package_name": "com.summit.aspen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "840940527567-mo25e8kq32rveagtsa83im8s1s1aqkvu.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "840940527567-rv177cfudp180i0lku1eul3ksif1r8re.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQHMHwHRRl2R4xXyEDU0wFyl8gDEKO80g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

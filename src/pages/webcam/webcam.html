@@ -1,0 +1,53 @@
+<!--
+  Generated template for the WebcamPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <header-component [headerpush]="header"></header-component>
+</ion-header>
+
+<ion-content has-header padding class="content_box">
+    <div margin-top class="login_bg box_background rel">
+
+    <div margin padding>
+      <img src="./assets/icons/cemera.png" class="medium_img"/>
+      <h5 class="marg5" text-center>ASPEN WEBCAMS</h5>
+      <h5 [innerHTML]="apiData?.page?.content"></h5>
+    </div>
+
+    <div margin padding style="padding:0 !important;">
+
+      <h5 class="marg5" margin-top text-center>AIRPORT CAM</h5>
+      <img src="http://website:Web1Web1@50.76.133.221/GetData.cgi?CH=1" style="margin:0 !important;">
+      <!-- website:Web1Web1@http://50.76.133.221/GetData.cgi?CH=1 -->
+
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+      <ion-slides autoplay="500" loop="true" speed="3000">
+      <ion-slide>
+      <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.snowmassrecreation.com" target="_blank"><img style="padding: 10px;margin:0;" src= {{ads_data[0]?.image}}></a>
+    </ion-slide>
+      <ion-slide>
+      <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.aspengloballuxury.com" target="_blank"><img style="padding: 10px;margin:0;" src= {{ads_data[1]?.image}}></a>
+      </ion-slide>
+      <ion-slide>
+      <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://sednafilms.com" target="_blank"><img style="padding: 10px;margin:0;" src= {{ads_data[2]?.image}}></a>
+      </ion-slide>
+      <!--<ion-slide>
+      <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.snowmassrecreation.com" target="_blank"><img style=" padding-right: 13px;" src= {{ads_data[3]?.image}}></a>
+      </ion-slide>
+      <ion-slide>
+      <a class="gofollow" data-track="MiwxLDEsMTA=" href="http://www.dalypropserv.com" target="_blank"><img style=" padding-right: 13px;" src= {{ads_data[4]?.image}}></a>
+      </ion-slide>-->
+      </ion-slides>
+      
+     </ion-toolbar>
+  <!-- <footer-component></footer-component> -->
+</ion-footer>
